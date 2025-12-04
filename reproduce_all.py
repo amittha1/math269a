@@ -1,7 +1,10 @@
-from src.experiments_stage1 import run_stage1
+from src.experiments_stage1and2 import run_stage1, run_stage2
+from src.experiments_stage3 import run_stage3
 
 def main():
-    run_stage1()
+    #run_stage1()
+    #run_stage2()
+    run_stage3()
 
 if __name__ == "__main__":
     main()

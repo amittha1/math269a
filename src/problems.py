@@ -21,3 +21,19 @@ def example_B():
 
     exact = lambda t: K / (1 + (K/y0 - 1)*np.exp(-r*t))
     return f, t0, T, y0, exact
+
+def test_linear_problem(lambda_val, t0, T, y0):
+    def f(t, y):
+        return lambda_val * y
+    exact = lambda t: y0 * np.exp(lambda_val * (t - t0))
+    return f, t0, T, y0, exact
+
+def example_C():
+    def f(t,y):
+        return 4.0 * t**2 * np.cos(y)
+    def df_dy(t,y):
+        return -4.0 * t**2 * np.sin(y)
+    t0 = 0.0
+    T = 4.0
+    y0 = 0.1
+    return f, df_dy, t0, T, y0
