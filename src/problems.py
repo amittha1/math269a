@@ -37,3 +37,25 @@ def example_C():
     T = 4.0
     y0 = 0.1
     return f, df_dy, t0, T, y0
+
+def example_D():
+
+    A = np.array([[-2.0, 1.0],[1.0, -2.0]])
+    def f(t, y):
+        return A @ y
+    t0 = 0.0
+    T = 10.0
+    y0 = np.array([1.0, 1.0])
+    return f, t0, T, y0, A
+
+def example_E():
+    omega = 2.0
+    A = np.array([[0.0, 1.0],[-omega**2, 0.0]])
+    def f(t, y):
+        return A @ y
+    t0 = 0.0
+    T = 10.0
+    y0 = np.array([1.0, 0.0])
+    def exact(t):
+        return np.array([np.cos(omega * t), -omega * np.sin(omega * t)])
+    return f, t0, T, y0, A, exact
