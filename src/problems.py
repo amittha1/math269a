@@ -59,3 +59,41 @@ def example_E():
     def exact(t):
         return np.array([np.cos(omega * t), -omega * np.sin(omega * t)])
     return f, t0, T, y0, A, exact
+
+def example_F():
+    def f(t, y):
+        return -400.0 * y + np.cos(y)
+    def df_dy(t, y):
+        return -400.0 - np.sin(y)
+    t0 = 0.0
+    T = 2.0
+    y0 = 0.0
+    def placeholder_exact(t):
+        raise NotImplementedError("Use numerical reference, no simple closed form.")
+
+    return f, df_dy, t0, T, y0, placeholder_exact
+def example_A_s5():
+    def f(t, y):
+        return -2.0 * y
+    def df_dy(t, y):
+        return -2.0
+    t0 = 0.0
+    T = 5.0
+    y0 = 1.0
+    exact = lambda t: np.exp(-2*t)
+    return f, df_dy, t0, T, y0, exact
+
+def example_B_s5():
+    r = 3.0
+    K = 2.0
+    y0 = 0.2
+
+    def f(t, y):
+        return r*y*(1 - y/K)
+    def df_dy(t, y):
+        return r * (1 - 2*y/K)
+    t0 = 0.0
+    T = 5.0
+
+    exact = lambda t: K / (1 + (K/y0 - 1)*np.exp(-r*t))
+    return f, df_dy, t0, T, y0, exact

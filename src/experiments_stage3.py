@@ -112,8 +112,8 @@ def run_exampleC_stability():
     h_euler_stable   = 0.5 * h_max
     h_euler_unstable = 2.5 * h_max
 
-    # plot h * df/dy for the unstable h and mark the -2 threshold
-    z_unstable = h_euler_unstable * lambda_vals  # z(t) = h * lambda(t)
+    
+    z_unstable = h_euler_unstable * lambda_vals  
     z_stable   = h_euler_stable * lambda_vals
 
     plt.figure()
@@ -128,8 +128,6 @@ def run_exampleC_stability():
     plt.savefig("figs/stage3_exampleC_euler_indicator.png", dpi=150, bbox_inches="tight")
     plt.close()
 
-    # same idea for RK2; real-axis bound is the same, so the picture is identical in theory,
-    # but we still show it for completeness if you want a second plot:
     h_rk2_stable   = 0.5 * h_max
     h_rk2_unstable = 2.5 * h_max
     z_unstable_rk2 = h_rk2_unstable * lambda_vals
