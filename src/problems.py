@@ -97,3 +97,17 @@ def example_B_s5():
 
     exact = lambda t: K / (1 + (K/y0 - 1)*np.exp(-r*t))
     return f, df_dy, t0, T, y0, exact
+
+def example_G():
+    def f(t,y):
+        return -1000.0 * y + np.sin(t)
+    def df_dy(t,y):
+        return -1000.0
+    t0 = 0.0
+    T = 10.0
+    y0 = 0.0
+
+    def exact(t):
+        return (1000.0 * np.sin(t) - np.cos(t) + np.exp(-1000.0 * t)) / 1000001.0
+    
+    return f, df_dy, t0, T, y0, exact
