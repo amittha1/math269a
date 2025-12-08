@@ -7,13 +7,13 @@ from src.experiments_stage7 import run_stage7
 from src.experiments_stage8 import run_stage8
 
 def main():
-    #run_stage1()
-    #run_stage2()
-    #run_stage3()
-    #run_stage4()
-    #un_stage5()
-    #run_stage6()
-    #run_stage7()
+    run_stage1()
+    run_stage2()
+    run_stage3()
+    run_stage4()
+    run_stage5()
+    run_stage6()
+    run_stage7()
     run_stage8()
 
 if __name__ == "__main__":
