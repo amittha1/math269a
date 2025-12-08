@@ -98,7 +98,7 @@ def work_precision_s6(fig_path):
     plt.figure()
     plt.bar(labels, works)
     plt.yscale("log")
-    plt.ylabel("Work (total RHS evals)")
+    plt.ylabel("Work (total RHS evals in log scale)")
     plt.title("Stage 6: Work to achieve tol = 1e-4 (Example G)")
     plt.grid(axis="y")
     plt.savefig(fig_path, dpi=150, bbox_inches="tight")

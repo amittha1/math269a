@@ -111,3 +111,12 @@ def example_G():
         return (1000.0 * np.sin(t) - np.cos(t) + np.exp(-1000.0 * t)) / 1000001.0
     
     return f, df_dy, t0, T, y0, exact
+
+def example_H(mu = 1.0):
+    def f(t,y):
+        x, v = y
+        return np.array([v, mu * (1.0 - x**2) * v - x])
+    t0 = 0.0
+    T = 40.0
+    y0 = np.array([1.0, 0.0])
+    return f, t0, T, y0
